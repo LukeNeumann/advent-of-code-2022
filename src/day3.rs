@@ -29,12 +29,12 @@ pub fn run(stdout: &mut dyn std::io::Write, content : &str) {
   let mut sum2 = 0;
   let mut b : HashMap<char, u32> = HashMap::new(); // map of potential badges
   for (index, line) in lines.iter().enumerate() {
-    let im3 = index % 3;
+    let im3 = (index as u32) % 3;
     if im3 == 0 { b = HashMap::new(); }
 
     for c in line.chars() {
-        if(im3 == 0 || b.get(&c) == Some(&(im3 as u32))) {
-            b.insert(c, im3 as u32 + 1);
+        if(im3 == 0 || b.get(&c) == Some(&im3)) {
+            b.insert(c, im3 + 1);
             if(im3 == 2) { sum2 += calculate_priority(&c); }
         }
     }
