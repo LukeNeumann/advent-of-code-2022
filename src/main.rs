@@ -1,3 +1,5 @@
+#![allow(unused_parens)]
+
 mod day1;
 mod day2;
 mod day3;
@@ -80,7 +82,7 @@ fn test_day2() {
 fn test_day3() {
     let mut stdout = Vec::new();
     run_day(&mut stdout, "3");
-    assert_eq!(stdout, b"not implemented\n");
+    assert_eq!(stdout, b"7889\n2825\n");
 }
 #[test]
 fn test_day4() {
