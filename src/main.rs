@@ -28,7 +28,8 @@ mod day25;
 
 
 fn run_day(stdout: &mut dyn std::io::Write, day : &str) {
-    let content = std::fs::read_to_string(format!("input/{day}.txt")).unwrap();
+    let binding = std::fs::read_to_string(format!("input/{day}.txt")).unwrap();
+    let content = binding.trim();
     match day {
         "1" => day1::run(stdout, &content),
         "2" => day2::run(stdout, &content),
@@ -106,7 +107,7 @@ fn test_day6() {
 fn test_day7() {
     let mut stdout = Vec::new();
     run_day(&mut stdout, "7");
-    assert_eq!(stdout, b"not implemented\n");
+    assert_eq!(stdout, b"2031851\n2568781\n");
 }
 #[test]
 fn test_day8() {
