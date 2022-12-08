@@ -6,19 +6,7 @@ struct Dir {
   parent: usize
 }
 
-// impl Dir {
-//   fn size(&self) -> u32 {
-//     self.files.iter().map(|a| a.0).sum::<u32>() +
-//     self.dirs.iter().map(|a| a.size()).sum::<u32>()
-//   }
-// }
-
 fn get_dir_size(index: usize, fs : &Vec<Dir>) -> u32 {
-  // match fs[index] {
-  //   Some(dir) => {
-  //   },
-  //   None => 0
-  // }
   fs[index].files.iter().map(|a| a.0).sum::<u32>() +
   fs[index].dirs.iter().map(|&a| get_dir_size(a, fs)).sum::<u32>()
 }
