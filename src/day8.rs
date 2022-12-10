@@ -12,7 +12,7 @@ fn is_visible(treeline: &Vec<&u32>, position: usize) -> bool {
 fn get_view(treeline: &Vec<&u32>, position: usize) -> u32 {
   match treeline[0..position].iter().rev().position(|p| p >= &&treeline[position]) {
     Some(p) => p as u32 + 1,
-    None => if position == 0 {0} else {position as u32}
+    None => position as u32
   }
 }
 
