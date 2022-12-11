@@ -28,7 +28,8 @@ mod day25;
 
 
 fn run_day(stdout: &mut dyn std::io::Write, day : &str, ex : &str) {
-    let binding = std::fs::read_to_string(format!("input/{day}{ex}.txt")).unwrap();
+    let under = if ex == "" {""} else {"_"};
+    let binding = std::fs::read_to_string(format!("input/{day}{under}{ex}.txt")).unwrap();
     let content = binding.trim();
     match day {
         "1" => day1::run(stdout, &content),
@@ -65,158 +66,158 @@ fn main() {
     let mut day = "1";
     if args.len() > 1 { day = &args[1]; }
     let mut ex = "";
-    if args.len() > 2 && &args[2] == "ex" { ex = "_ex"; }
-    run_day(&mut std::io::stdout(), day, ex);
+    if args.len() > 2 { ex = &args[2]; }
+    run_day(&mut std::io::stdout(), day, &ex);
 }
 
 #[test]
 fn test_day1() {
     let mut stdout = Vec::new();
-    run_day(&mut stdout, "1");
+    run_day(&mut stdout, "1", "");
     assert_eq!(stdout, b"70698\n206643\n");
 }
 #[test]
 fn test_day2() {
     let mut stdout = Vec::new();
-    run_day(&mut stdout, "2");
+    run_day(&mut stdout, "2", "");
     assert_eq!(stdout, b"11873\n12014\n");
 }
 #[test]
 fn test_day3() {
     let mut stdout = Vec::new();
-    run_day(&mut stdout, "3");
+    run_day(&mut stdout, "3", "");
     assert_eq!(stdout, b"7889\n2825\n");
 }
 #[test]
 fn test_day4() {
     let mut stdout = Vec::new();
-    run_day(&mut stdout, "4");
+    run_day(&mut stdout, "4", "");
     assert_eq!(stdout, b"459\n779\n");
 }
 #[test]
 fn test_day5() {
     let mut stdout = Vec::new();
-    run_day(&mut stdout, "5");
+    run_day(&mut stdout, "5", "");
     assert_eq!(stdout, b"QNHWJVJZW\nBPCZJLFJW\n");
 }
 #[test]
 fn test_day6() {
     let mut stdout = Vec::new();
-    run_day(&mut stdout, "6");
+    run_day(&mut stdout, "6", "");
     assert_eq!(stdout, b"1100\n2421\n");
 }
 #[test]
 fn test_day7() {
     let mut stdout = Vec::new();
-    run_day(&mut stdout, "7");
+    run_day(&mut stdout, "7", "");
     assert_eq!(stdout, b"2031851\n2568781\n");
 }
 #[test]
 fn test_day8() {
     let mut stdout = Vec::new();
-    run_day(&mut stdout, "8");
+    run_day(&mut stdout, "8", "");
     assert_eq!(stdout, b"1688\n410400\n");
 }
 #[test]
 fn test_day9() {
     let mut stdout = Vec::new();
-    run_day(&mut stdout, "9");
-    assert_eq!(stdout, b"not implemented\n");
+    run_day(&mut stdout, "9", "");
+    assert_eq!(stdout, b"6354\n2651\n");
 }
 #[test]
 fn test_day10() {
     let mut stdout = Vec::new();
-    run_day(&mut stdout, "10");
+    run_day(&mut stdout, "10", "");
     assert_eq!(stdout, b"not implemented\n");
 }
 #[test]
 fn test_day11() {
     let mut stdout = Vec::new();
-    run_day(&mut stdout, "11");
+    run_day(&mut stdout, "11", "");
     assert_eq!(stdout, b"not implemented\n");
 }
 #[test]
 fn test_day12() {
     let mut stdout = Vec::new();
-    run_day(&mut stdout, "12");
+    run_day(&mut stdout, "12", "");
     assert_eq!(stdout, b"not implemented\n");
 }
 #[test]
 fn test_day13() {
     let mut stdout = Vec::new();
-    run_day(&mut stdout, "13");
+    run_day(&mut stdout, "13", "");
     assert_eq!(stdout, b"not implemented\n");
 }
 #[test]
 fn test_day14() {
     let mut stdout = Vec::new();
-    run_day(&mut stdout, "14");
+    run_day(&mut stdout, "14", "");
     assert_eq!(stdout, b"not implemented\n");
 }
 #[test]
 fn test_day15() {
     let mut stdout = Vec::new();
-    run_day(&mut stdout, "15");
+    run_day(&mut stdout, "15", "");
     assert_eq!(stdout, b"not implemented\n");
 }
 #[test]
 fn test_day16() {
     let mut stdout = Vec::new();
-    run_day(&mut stdout, "16");
+    run_day(&mut stdout, "16", "");
     assert_eq!(stdout, b"not implemented\n");
 }
 #[test]
 fn test_day17() {
     let mut stdout = Vec::new();
-    run_day(&mut stdout, "17");
+    run_day(&mut stdout, "17", "");
     assert_eq!(stdout, b"not implemented\n");
 }
 #[test]
 fn test_day18() {
     let mut stdout = Vec::new();
-    run_day(&mut stdout, "18");
+    run_day(&mut stdout, "18", "");
     assert_eq!(stdout, b"not implemented\n");
 }
 #[test]
 fn test_day19() {
     let mut stdout = Vec::new();
-    run_day(&mut stdout, "19");
+    run_day(&mut stdout, "19", "");
     assert_eq!(stdout, b"not implemented\n");
 }
 #[test]
 fn test_day20() {
     let mut stdout = Vec::new();
-    run_day(&mut stdout, "20");
+    run_day(&mut stdout, "20", "");
     assert_eq!(stdout, b"not implemented\n");
 }
 #[test]
 fn test_day21() {
     let mut stdout = Vec::new();
-    run_day(&mut stdout, "21");
+    run_day(&mut stdout, "21", "");
     assert_eq!(stdout, b"not implemented\n");
 }
 #[test]
 fn test_day22() {
     let mut stdout = Vec::new();
-    run_day(&mut stdout, "22");
+    run_day(&mut stdout, "22", "");
     assert_eq!(stdout, b"not implemented\n");
 }
 #[test]
 fn test_day23() {
     let mut stdout = Vec::new();
-    run_day(&mut stdout, "23");
+    run_day(&mut stdout, "23", "");
     assert_eq!(stdout, b"not implemented\n");
 }
 #[test]
 fn test_day24() {
     let mut stdout = Vec::new();
-    run_day(&mut stdout, "24");
+    run_day(&mut stdout, "24", "");
     assert_eq!(stdout, b"not implemented\n");
 }
 #[test]
 fn test_day25() {
     let mut stdout = Vec::new();
-    run_day(&mut stdout, "25");
+    run_day(&mut stdout, "25", "");
     assert_eq!(stdout, b"not implemented\n");
 }
 
