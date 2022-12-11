@@ -27,8 +27,8 @@ mod day24;
 mod day25;
 
 
-fn run_day(stdout: &mut dyn std::io::Write, day : &str) {
-    let binding = std::fs::read_to_string(format!("input/{day}.txt")).unwrap();
+fn run_day(stdout: &mut dyn std::io::Write, day : &str, ex : &str) {
+    let binding = std::fs::read_to_string(format!("input/{day}{ex}.txt")).unwrap();
     let content = binding.trim();
     match day {
         "1" => day1::run(stdout, &content),
@@ -64,7 +64,9 @@ fn main() {
     let args: Vec<String> = std::env::args().collect();
     let mut day = "1";
     if args.len() > 1 { day = &args[1]; }
-    run_day(&mut std::io::stdout(), day);
+    let mut ex = "";
+    if args.len() > 2 && &args[2] == "ex" { ex = "_ex"; }
+    run_day(&mut std::io::stdout(), day, ex);
 }
 
 #[test]
