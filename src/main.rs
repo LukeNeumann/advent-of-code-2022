@@ -134,7 +134,7 @@ fn test_day10() {
 fn test_day11() {
     let mut stdout = Vec::new();
     run_day(&mut stdout, "11", "");
-    assert_eq!(stdout, b"not implemented\n");
+    assert_eq!(stdout, b"55930\n14636993466\n");
 }
 #[test]
 fn test_day12() {
